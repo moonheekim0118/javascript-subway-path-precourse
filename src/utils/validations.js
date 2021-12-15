@@ -1,4 +1,4 @@
-import { stations } from './initialDatas.js';
+import { stations } from '../data/index.js';
 import { ERROR_TYPE } from './constants.js';
 
 const VALIDATION_RESULT = (SUCCESS, ERROR = '') => {

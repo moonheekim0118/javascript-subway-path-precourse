@@ -26,6 +26,7 @@ export default class Form extends Component {
     const option = $(SELECTOR.SEARCH_RADIO, this.$container).value;
     const { SUCCESS, ERROR } = checkValidStations(departureName, arrivalName);
     if (!SUCCESS) return alert(ERROR_MESSAGE[ERROR]);
+    this.props.handleSubmit(departureName, arrivalName, option);
   }
 
   render() {
@@ -36,7 +37,7 @@ export default class Form extends Component {
         <input id=${ELEMENT.ARRIVAL_INPUT} required/>
         <input type="radio" name=${ELEMENT.SEARCH_RADIO} id="path" value=${SEARCH_OPTION.PATH} checked/>
         <label for="path">최단경로</label>
-        <input type="radio" name=${ELEMENT.SEARCH_RADIO} id="time" value=${SEARCH_OPTION.TIME}/>
+        <input type="radio" name=${ELEMENT.SEARCH_RADIO} id="time" value=${SEARCH_OPTION.TIME} />
         <label for="time">최소시간</label>
         <button id=${ELEMENT.SEARCH_BUTTON}>검색하기</button>
       `;
