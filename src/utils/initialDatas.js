@@ -10,8 +10,8 @@ const initialStation = [
 
 export const stations = new Set(initialStation);
 
-const arrivalInformationGenerator = (to, distance, time) => {
-  return { to, distance, time };
+const arrivalInformationGenerator = (arrival, distance, time) => {
+  return { arrival, distance, time };
 };
 
 export const lineConnections = {
